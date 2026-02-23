@@ -7,11 +7,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
-# Django
-db.sqlite3
-*.sqlite3
-media/
-staticfiles/
+# Virtual environments
+venv/
+.venv/
+env/
 
 # Environment variables (VERY IMPORTANT)
 .env
@@ -19,15 +18,27 @@ staticfiles/
 *.env
 smartshop_backend/.env
 
-# Virtual Environment
-venv/
-.venv/
-.env
-.env.*
-*.env
+# Database
+db.sqlite3
+*.sqlite3
 
-# Migrations cache
-*.pot
+# Django media & static
+media/
+staticfiles/
+
+# Python packaging / build
+build/
+dist/
+*.egg-info/
+
+# Testing / coverage
+.coverage
+coverage/
+htmlcov/
+.pytest_cache/
+
+# Type checking
+.mypy_cache/
 
 # ======================================
 # Node / React / Vite
@@ -38,7 +49,6 @@ node_modules/
 
 # Production build output
 dist/
-build/
 
 # Vite cache
 .vite/
@@ -67,14 +77,9 @@ yarn-error.log*
 Thumbs.db
 
 # ======================================
-# Misc
+# Temporary files
 # ======================================
 
-# Coverage reports
-coverage/
-htmlcov/
-
-# Temporary files
 *.swp
 *.bak
 *.tmp
