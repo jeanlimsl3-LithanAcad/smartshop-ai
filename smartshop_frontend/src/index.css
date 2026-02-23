@@ -1,0 +1,74 @@
+.smartshop-navbar {
+  background: linear-gradient(90deg, #0d6efd, #4c6fff, #6610f2);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Footer that complements text */
+.smartshop-footer {
+  background: #0b1120;
+  color: #e5e7eb;
+}
+
+/* Chat card extras */
+.chat-card {
+  backdrop-filter: blur(4px);
+}
+
+/* Scrollable chat window */
+.chat-window {
+  max-height: 320px;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+/* Optional scrollbar styling */
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-window::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-window::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15);
+  border-radius: 999px;
+}
+
+/* Chat bubbles */
+.chat-bubble {
+  max-width: 75%;
+  border-radius: 1rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  padding-top: 0.55rem;
+  padding-bottom: 0.55rem;
+  transition: transform 0.08s ease-out, box-shadow 0.08s ease-out,
+    background-color 0.12s ease-out;
+}
+
+.chat-bubble-user {
+  border-bottom-right-radius: 0.35rem;
+  border-bottom-left-radius: 1.2rem;
+}
+
+.chat-bubble-assistant {
+  border-bottom-left-radius: 0.35rem;
+  border-bottom-right-radius: 1.2rem;
+  background-color: #f8f9fa;
+}
+
+/* Hover lift */
+.chat-bubble:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.16);
+}
+
+.chat-bubble-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}
+
+.chat-bubble-user .chat-bubble-label {
+  color: rgba(255, 255, 255, 0.9);
+}
