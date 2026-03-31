@@ -153,7 +153,7 @@ Make sure you have the following installed:
 
 ## 👤 Author
 
-**Jean** — [GitHub Profile](https://github.com/jeanlimsl3-LithanAcad)
+**Jean** — [GitHub Profile](https://github.com/jeanlimsl3-LithanAcad) | [LinkedIn](https://www.linkedin.com/in/jeanlimsl/)
 
 ---
 
