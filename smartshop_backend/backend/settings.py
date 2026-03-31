@@ -61,8 +61,8 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -104,7 +104,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'smartshop_startup_db',   # database name
         'USER': 'root',                   # change if your MySQL user is different
-        'PASSWORD': 'blueJean1033',           # change to your actual MySQL password
+        'PASSWORD': 'NewStrongPassword123!',           # change to your actual MySQL password
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
