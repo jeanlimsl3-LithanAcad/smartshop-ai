@@ -9,14 +9,14 @@ https://docs.djangoproject.com/en/6.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
-
-from pathlib import Path
+import environ
 import os
-from dotenv import load_dotenv
+from pathlib import Path
+
+env = environ.Env()
+environ.Env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
-
-load_dotenv(os.path.join(BASE_DIR, ".env"))
 
 # Old (can keep for reference or remove later)
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
@@ -32,12 +32,12 @@ print("OPENAI_API_KEY loaded:", bool(OPENAI_API_KEY))
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-^=-0fss+043@$n&ymeexfv5oryl52$#$emq-o+h256$te4q4fg'
+SECRET_KEY = env('SECRET_KEY',default='-0fss+043@$n&ymeexfv5oryl52$#$emq-o+h256$te4q4fg')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool('DEBUG', default=False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
 
 
 # Application definition
@@ -102,14 +102,11 @@ WSGI_APPLICATION = 'backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'smartshop_startup_db',   # database name
-        'USER': 'root',                   # change if your MySQL user is different
-        'PASSWORD': 'NewStrongPassword123!',           # change to your actual MySQL password
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'",
-        },
+        'NAME': env('MYSQL_DATABASE', default='b6hs4ncatyrzqb4tt8zv'),
+        'USER': env('MYSQL_USER', default='uo6ang8kei5zggqm'),
+        'PASSWORD': env('MYSQL_PASSWORD', default='UafFAPL3uTIDhcTKQKfq'),
+        'HOST': env('MYSQL_HOST', default='b6hs4ncatyrzqb4tt8zv-mysql.services.clever-cloud.com'),
+        'PORT': env('MYSQL_PORT', default='3306'),
     }
 }
 
@@ -149,6 +146,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
