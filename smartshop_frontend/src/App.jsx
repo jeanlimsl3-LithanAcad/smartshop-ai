@@ -1,7 +1,7 @@
 // src/App.jsx
 import { useEffect, useState } from "react";
 
-const BACKEND_URL = "http://127.0.0.1:8000";
+const BACKEND_URL = "https://smartshop-ai-1rvb.onrender.com";
 
 // Helper to build full image URL
 function getImageUrl(imageField) {

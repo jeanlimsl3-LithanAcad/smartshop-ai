@@ -72,7 +72,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:5173",  # React dev server (Vite)
+    "http://localhost:5173",
+    "https://smartshop-ai-frontend.onrender.com",  # ← Add this
 ]
 
 
