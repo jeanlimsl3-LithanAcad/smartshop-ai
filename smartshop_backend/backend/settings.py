@@ -38,6 +38,9 @@ SECRET_KEY = env('SECRET_KEY',default='-0fss+043@$n&ymeexfv5oryl52$#$emq-o+h256$
 DEBUG = env.bool('DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('ALLOWED_HOSTS', default=['*'])
+CSRF_TRUSTED_ORIGINS = [
+    'https://smartshop-ai-1rvb.onrender.com',
+]
 
 
 # Application definition
