@@ -52,11 +52,10 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'cloudinary_storage', 
     'django.contrib.staticfiles',
     'cloudinary',
-    
-    
+    'cloudinary_storage',
+
     # Third-party
     'rest_framework',
     'corsheaders',
@@ -178,3 +177,8 @@ CLOUDINARY_STORAGE = {
     'API_KEY': env('CLOUDINARY_API_KEY', default='221583889147468'),
     'API_SECRET': env('CLOUDINARY_API_SECRET', default='CHSMY7VSWz9d4-7W8Sk2ZfMzQnY'),
 }
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
